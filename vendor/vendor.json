@@ -1,0 +1,67 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "1Hm7Ij3YHAqBbxLCcGr4NKbI6e0=",
+			"path": "github.com/codegangsta/inject",
+			"revision": "33e0aa1cb7c019ccc3fbe049a8262a6403d30504",
+			"revisionTime": "2015-01-14T23:56:00Z"
+		},
+		{
+			"checksumSHA1": "AtI2wKvKTag/BASZPcdTd/KAjis=",
+			"path": "github.com/go-martini/martini",
+			"revision": "22fa46961aabd2665cf3f1343b146d20028f5071",
+			"revisionTime": "2017-01-21T21:58:54Z"
+		},
+		{
+			"checksumSHA1": "tqNT23AcXaNZLjvAX/qo7G13OKk=",
+			"path": "github.com/klauspost/compress/flate",
+			"revision": "8a8c9b92f99fe49f9c13688b0ee2824bb586c972",
+			"revisionTime": "2018-02-18T17:46:07Z"
+		},
+		{
+			"checksumSHA1": "rO+kZTobMQp2VTLPrxLovqFWz3U=",
+			"path": "github.com/klauspost/compress/gzip",
+			"revision": "8a8c9b92f99fe49f9c13688b0ee2824bb586c972",
+			"revisionTime": "2018-02-18T17:46:07Z"
+		},
+		{
+			"checksumSHA1": "tyO2QCRaqKdoRFNc5bU2tVRK6x8=",
+			"path": "github.com/klauspost/compress/zlib",
+			"revision": "8a8c9b92f99fe49f9c13688b0ee2824bb586c972",
+			"revisionTime": "2018-02-18T17:46:07Z"
+		},
+		{
+			"checksumSHA1": "hmGOqZUrj05QVwyFjo5fybMH1w8=",
+			"path": "github.com/klauspost/cpuid",
+			"revision": "ae832f27941af41db13bd6d8efd2493e3b22415a",
+			"revisionTime": "2018-01-02T08:10:00Z"
+		},
+		{
+			"checksumSHA1": "x6+Vi9WumwYUrK8ZUmkGLDgOLtc=",
+			"path": "github.com/valyala/bytebufferpool",
+			"revision": "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7",
+			"revisionTime": "2016-08-17T18:16:52Z"
+		},
+		{
+			"checksumSHA1": "0T+7F5FnaeBjc2sCdE+wVkOptr0=",
+			"path": "github.com/valyala/fasthttp",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"revisionTime": "2017-12-07T12:09:41Z"
+		},
+		{
+			"checksumSHA1": "PR0VJo4sMXprWz+/zeKnLH9Yw/k=",
+			"path": "github.com/valyala/fasthttp/fasthttputil",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"revisionTime": "2017-12-07T12:09:41Z"
+		},
+		{
+			"checksumSHA1": "0l/kTZy4cwC8P71DIi0CynmX4Bg=",
+			"path": "github.com/valyala/fasthttp/stackless",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"revisionTime": "2017-12-07T12:09:41Z"
+		}
+	],
+	"rootPath": "github.com/dotnet123/fasthttptest"
+}
