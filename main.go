@@ -9,7 +9,8 @@ import (
 	"sync"
 	"errors"
 	"encoding/json"
-."fasthttptest/models"
+
+	"github.com/dotnet123/fasthttptest/models"
 )
 
 var (
@@ -76,7 +77,7 @@ func gorun(ctx *fasthttp.RequestCtx)  {
 	ctx.SetContentType("application/json; charset=utf-8")
 	url:=string(ctx.RequestURI());log.Println(url)
 	body:=ctx.Request.Body()
-	user:= &User{}
+	user:= &models.User{}
 	json.Unmarshal(body,user)
 
 	f, ok := funcs[url[1:]]
@@ -135,11 +136,12 @@ func gorun(ctx *fasthttp.RequestCtx)  {
 }
 func requestHandler(ctx *fasthttp.RequestCtx) {
 
-  gorun(ctx)
+  //gorun(ctx)
+  ctx.Response.SetBodyString("test")
 
 }
 
 
-func test_Rpc1(me *User) (int64, string, error) {
+func test_Rpc1(me *models.User) (int64, string, error) {
 	return me.Id+78, me.Name, nil
 }
