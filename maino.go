@@ -2,7 +2,7 @@ package main
 
 import "github.com/go-martini/martini"
 
-func main()  {
+func main5()  {
 
 
 	m := martini.Classic()
