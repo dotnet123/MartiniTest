@@ -11,6 +11,7 @@ import (
 	"encoding/json"
 
 	"github.com/dotnet123/fasthttptest/models"
+	"runtime"
 )
 
 var (
@@ -61,6 +62,8 @@ func  Register(name string, f interface{}) (err error) {
 	return
 }
 func main() {
+	cpuNum:=runtime.NumCPU()
+	runtime.GOMAXPROCS(cpuNum*2)
 	flag.Parse()
 	Register("rpc1", test_Rpc1)
 	h := requestHandler
