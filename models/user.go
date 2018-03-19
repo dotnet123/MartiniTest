@@ -1,7 +1,10 @@
 package models
 
+func init()  {
+
+}
 type IEvent interface {
-	Create(model interface{}) (int64, error)
+	Create(model IModel) (int64, error)
 }
 type IModel interface {
 
@@ -12,15 +15,18 @@ type User struct {
 	IModel
 }
 type UserHandler struct {
+	Next IEvent
 }
+type UserDal struct {
+}
+func (this *UserHandler) Create(m IModel) (int64, error){
 
-func (this *UserHandler) Create(user *User) (int64, error){
-	//dummy := (*User)(unsafe.Pointer(model))
-	//user,ok := model.(*User)
-	//if !ok{
-	//	//return
-	//}
+	user,_ := m.(*User)
+	this.Next.Create(m)
+	return  user.Id,nil
+}
+func (this *UserDal) Create(m IModel) (int64, error){
 
-	//u:= (&(model.(*User))).(User)
+	user,_ := m.(*User)
 	return  user.Id,nil
 }
