@@ -1,32 +1,52 @@
 package models
 
-func init()  {
+import (
+	"github.com/dotnet123/fasthttptest/util"
 
-}
-type IEvent interface {
-	Create(model IModel) (int64, error)
-}
-type IModel interface {
+	"github.com/dotnet123/fasthttptest/ext"
+	"errors"
+)
 
+func init() {
+	util.InitHandler(&UserHandler{})
 }
+
 type User struct {
-	Id int64
+	Id   int64
 	Name string
-	IModel
 }
+type Query struct {
+	Take  int32
+	Skip  int32
+	Count int32
+}
+type UserQuery struct {
+	Query
+	Name   ext.NullableString
+	Qty    int32
+	Return []User
+}
+
 type UserHandler struct {
-	Next IEvent
 }
 type UserDal struct {
 }
-func (this *UserHandler) Create(m IModel) (int64, error){
 
-	user,_ := m.(*User)
-	this.Next.Create(m)
-	return  user.Id,nil
-}
-func (this *UserDal) Create(m IModel) (int64, error){
+func (UserHandler) Create(user *User, dal UserDal) (int64, error) {
 
-	user,_ := m.(*User)
-	return  user.Id,nil
+	i, _ := dal.Create(user)
+	return user.Id + 3 + i, nil
 }
+func (UserHandler) Select(query *UserQuery) (userLst []User,count int64,err error) {
+	a := User{int64(1), "test"}
+	b := make([]User, 0)
+	b = append(b, a)
+	query.Return = b
+	return b,0,nil
+}
+func (*UserDal) Create(user *User) (int64, error) {
+
+	return user.Id + 2, errors.New("55666")
+}
+
+
